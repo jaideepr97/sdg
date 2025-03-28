@@ -446,6 +446,7 @@ def generate_taxonomy(
     for input_file in input_files:
         logger.debug("Generating data from input file: %s", input_file)
         samples = jlload(input_file)
+        samples = samples[:1]
         if not samples:
             raise GenerateException(
                 "Error: No samples found in input file {input_file}"
